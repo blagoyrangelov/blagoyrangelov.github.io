@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Blagoy Rangelov</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,300;1,8..60,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #FFFFFF;
+  --off-white: #FAFAFA;
+  --ink: #1C1C1C;
+  --ink-70: #4D4D4D;
+  --ink-45: #8C8C8C;
+  --ink-20: #CCCCCC;
+  --ink-10: #E5E5E5;
+  --ink-05: #F2F2F2;
+  --accent: #1B4F72;
+  --accent-hover: #164060;
+  --accent-light: #EBF2F8;
+  --accent-mid: #D0E2F0;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ink-10);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; height: 60px;
+}
+.nav-name {
+  font-family: var(--serif);
+  font-size: 1.1rem; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2.25rem; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-45); text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a.active::after {
+  content: ''; position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 1.5px; background: var(--accent);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 240px;
+  margin-top: 60px;
+  overflow: hidden;
+  background: #FFFFFF url('logo_BR.jpg') center/contain no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.5));
+}
+.hero-stars {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 20% 80%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 45%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 25%, rgba(255,255,255,0.7) 0%, transparent 100%);
+}
+.hero-note {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  color: rgba(255,255,255,0.5); font-size: 0.85rem;
+  text-align: center; line-height: 1.6;
+  pointer-events: none;
+}
+.hero-note strong { color: rgba(255,255,255,0.7); }
+
+/* INTRO */
+.intro-band {
+  max-width: 1080px; margin: 0 auto;
+  padding: 3.5rem 2.5rem 3rem;
+  display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem;
+  align-items: start;
+}
+.intro-photo {
+  width: 200px; height: 240px;
+  border-radius: 6px;
+  background: var(--ink-05);
+  border: 1px solid var(--ink-10);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-45); font-size: 0.8rem;
+  margin-top: -60px;
+  position: relative; z-index: 2;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.intro-text h1 {
+  font-family: var(--serif);
+  font-size: 2rem; font-weight: 400;
+  line-height: 1.3; letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+.intro-text h1 strong { font-weight: 600; }
+.intro-text .title-line {
+  font-size: 0.88rem; color: var(--ink-70);
+  margin-bottom: 1rem;
+}
+.intro-text .bio {
+  font-size: 0.92rem; color: var(--ink-70);
+  line-height: 1.75; max-width: 640px;
+}
+.intro-text .bio a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-mid);
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1080px; margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-divider {
+  max-width: 1080px; margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-divider hr {
+  border: none; border-top: 1px solid var(--ink-10);
+}
+.section-head {
+  padding-top: 3.5rem; margin-bottom: 2rem;
+  display: flex; align-items: baseline; gap: 1rem;
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem; font-weight: 400;
+}
+.section-head .line {
+  flex: 1; height: 1px; background: var(--ink-10);
+}
+
+/* RESEARCH PILLARS */
+.pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-bottom: 3.5rem;
+}
+.pillar {
+  border: 1px solid var(--ink-10);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex; flex-direction: column;
+}
+.pillar:hover {
+  border-color: var(--accent-mid);
+  box-shadow: 0 2px 12px rgba(27,79,114,0.06);
+}
+.pillar-number {
+  font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.pillar h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 500;
+  line-height: 1.35; margin-bottom: 0.75rem;
+}
+.pillar p {
+  font-size: 0.85rem; color: var(--ink-70);
+  line-height: 1.65; flex: 1;
+}
+.pillar .pillar-topics {
+  margin-top: 1.25rem; padding-top: 1rem;
+  border-top: 1px solid var(--ink-05);
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.topic-tag {
+  font-size: 0.7rem; font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+.pillar-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--accent); text-decoration: none;
+  transition: gap 0.2s;
+}
+.pillar-link:hover { gap: 0.55rem; }
+.pillar-link svg { width: 12px; height: 12px; }
+.pillar.coming-soon { opacity: 0.45; pointer-events: none; }
+.pillar.coming-soon::after {
+  content: 'Coming soon';
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-45);
+  background: var(--ink-05);
+  padding: 0.2rem 0.6rem; border-radius: 3px;
+}
+
+/* NEWS */
+.news-list { margin-bottom: 3.5rem; }
+.news-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--ink-05);
+  align-items: baseline;
+}
+.news-item:first-child { border-top: 1px solid var(--ink-05); }
+.news-date {
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-45);
+  padding-top: 0.1rem;
+}
+.news-body h4 {
+  font-size: 0.92rem; font-weight: 500; line-height: 1.45;
+  color: var(--ink);
+}
+.news-body h4 a {
+  color: var(--ink); text-decoration: none;
+}
+.news-body h4 a:hover { color: var(--accent); }
+.news-body p {
+  font-size: 0.85rem; color: var(--ink-70);
+  margin-top: 0.35rem; line-height: 1.6;
+}
+.news-tag {
+  display: inline-block;
+  font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* TEACHING TEASER (home page) */
+.teaching-teaser {
+  margin-bottom: 3.5rem;
+  padding: 1.5rem 0 0;
+}
+.teaching-teaser p {
+  font-size: 0.95rem; color: var(--ink-70);
+  line-height: 1.75; max-width: 720px;
+}
+.teaching-teaser a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-mid);
+}
+
+/* PUBLICATIONS */
+.pub-list { margin-bottom: 1.5rem; }
+.pub-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--ink-05);
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+}
+.pub-item:first-child { border-top: 1px solid var(--ink-05); }
+.pub-year {
+  font-family: var(--serif);
+  font-size: 1rem; font-weight: 500;
+  color: var(--accent);
+}
+.pub-info h4 {
+  font-size: 0.88rem; font-weight: 500;
+  line-height: 1.45;
+}
+.pub-info .authors {
+  font-size: 0.78rem; color: var(--ink-70);
+  margin-top: 0.15rem;
+}
+.pub-info .journal {
+  font-size: 0.78rem; color: var(--ink-45);
+  font-style: italic; margin-top: 0.1rem;
+}
+.pub-links { display: flex; gap: 0.75rem; white-space: nowrap; }
+.pub-links a {
+  font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--accent); text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--accent-mid);
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+}
+.pub-links a:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+.view-all-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--accent); text-decoration: none;
+  margin-bottom: 3.5rem;
+  transition: gap 0.2s;
+}
+.view-all-link:hover { gap: 0.6rem; }
+
+/* TEACHING */
+.teaching-list { margin-bottom: 3.5rem; }
+.course-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--ink-05);
+}
+.course-row:first-child { border-top: 1px solid var(--ink-05); }
+.course-semester {
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-45);
+  padding-top: 0.1rem;
+}
+.course-info h4 { font-size: 0.92rem; font-weight: 500; }
+.course-info .course-code {
+  font-size: 0.78rem; color: var(--ink-45);
+  margin-top: 0.1rem;
+}
+.course-info p {
+  font-size: 0.85rem; color: var(--ink-70);
+  margin-top: 0.4rem; line-height: 1.6;
+}
+
+/* ABOUT */
+.about-content {
+  max-width: 680px; margin-bottom: 3.5rem;
+}
+.about-content p {
+  font-size: 0.92rem; color: var(--ink-70);
+  line-height: 1.8; margin-bottom: 1rem;
+}
+
+/* SUB-PAGE HEADER (used on research/publications/teaching/outreach/about) */
+.page-header {
+  max-width: 1080px; margin: 0 auto;
+  padding: 6rem 2.5rem 3rem;
+  border-bottom: 1px solid var(--ink-10);
+}
+.page-header .eyebrow {
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: 2.4rem; font-weight: 400;
+  line-height: 1.2; letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+.page-header .lede {
+  font-size: 1.02rem; color: var(--ink-70);
+  line-height: 1.75; max-width: 720px;
+}
+.page-header .lede a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-mid);
+}
+
+/* RESEARCH THREADS (research.html) */
+.thread-list { margin-bottom: 4rem; }
+.thread {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--ink-05);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.thread:first-child { border-top: 1px solid var(--ink-05); }
+.thread .thread-label {
+  font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--accent);
+  padding-top: 0.4rem;
+}
+.thread h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem; font-weight: 500;
+  line-height: 1.3; margin-bottom: 0.85rem;
+}
+.thread p {
+  font-size: 0.92rem; color: var(--ink-70);
+  line-height: 1.8; margin-bottom: 0.85rem;
+  max-width: 720px;
+}
+.thread p a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-mid);
+}
+.thread p:last-child { margin-bottom: 0; }
+
+/* OUTREACH BLOCKS (outreach.html) */
+.outreach-block {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--ink-05);
+  align-items: start;
+}
+.outreach-block:first-child { border-top: 1px solid var(--ink-05); }
+.outreach-block.reverse { grid-template-columns: 320px 1fr; }
+.outreach-block.reverse .outreach-text { order: 2; }
+.outreach-block.reverse .outreach-figure { order: 1; }
+.outreach-text h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 500;
+  line-height: 1.3; margin-bottom: 0.85rem;
+}
+.outreach-text p {
+  font-size: 0.92rem; color: var(--ink-70);
+  line-height: 1.8; margin-bottom: 0.85rem;
+  max-width: 600px;
+}
+.outreach-text p:last-child { margin-bottom: 0; }
+.outreach-text a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-mid);
+}
+.outreach-figure {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--ink-10);
+  background: var(--ink-05);
+}
+.outreach-figure img {
+  display: block; width: 100%; height: auto;
+}
+.outreach-figure figcaption {
+  font-size: 0.72rem; color: var(--ink-45);
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--ink-10);
+  background: var(--white);
+  font-style: italic;
+}
+.outreach-figure.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 200px;
+  color: var(--ink-45); font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* ABOUT-PAGE LAYOUT (about.html) */
+.about-page {
+  max-width: 760px; margin: 0 auto;
+  padding: 1rem 2.5rem 4rem;
+}
+.about-page p {
+  font-size: 0.92rem; color: var(--ink-70);
+  line-height: 1.8; margin-bottom: 1.4rem;
+}
+.about-page p .accent { color: var(--accent); }
+.about-page figure {
+  margin: 2.25rem 0;
+  border: 1px solid var(--ink-10);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--ink-05);
+}
+.about-page figure img {
+  display: block; width: 100%; height: auto;
+}
+.about-page figure figcaption {
+  font-size: 0.78rem; color: var(--ink-45);
+  padding: 0.65rem 1rem;
+  border-top: 1px solid var(--ink-10);
+  background: var(--white);
+  font-style: italic;
+}
+.about-page figure.float-right {
+  float: right; clear: right;
+  width: 280px; margin: 0.4rem 0 1.4rem 2rem;
+}
+.about-page figure.float-left {
+  float: left; clear: left;
+  width: 280px; margin: 0.4rem 2rem 1.4rem 0;
+}
+.about-page::after { content: ''; display: block; clear: both; }
+
+/* FOOTER */
+footer {
+  background: var(--off-white);
+  border-top: 1px solid var(--ink-10);
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 1080px; margin: 0 auto;
+  padding: 2.5rem 2.5rem;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: start;
+}
+.footer-contact h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem; font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+.footer-contact p {
+  font-size: 0.85rem; color: var(--ink-70);
+  line-height: 1.75;
+}
+.footer-contact a { color: var(--accent); text-decoration: none; }
+.footer-links {
+  display: flex; gap: 1.75rem;
+  padding-top: 0.35rem;
+}
+.footer-links a {
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-45); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--ink); }
+.footer-bottom {
+  max-width: 1080px; margin: 0 auto;
+  padding: 0 2.5rem 2rem;
+  font-size: 0.72rem; color: var(--ink-45);
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .pillars { grid-template-columns: 1fr; }
+  .intro-band { grid-template-columns: 1fr; }
+  .intro-photo { width: 140px; height: 170px; margin-top: -40px; }
+  .hero { height: 300px; }
+  .pub-item { grid-template-columns: 48px 1fr; }
+  .pub-links { grid-column: 2; margin-top: 0.5rem; }
+  .course-row { grid-template-columns: 1fr; gap: 0.25rem; }
+  .news-item { grid-template-columns: 1fr; gap: 0.35rem; }
+  .thread { grid-template-columns: 1fr; gap: 0.6rem; }
+  .outreach-block, .outreach-block.reverse { grid-template-columns: 1fr; gap: 1.5rem; }
+  .outreach-block.reverse .outreach-text { order: 1; }
+  .outreach-block.reverse .outreach-figure { order: 2; }
+  .about-page figure.float-right, .about-page figure.float-left {
+    float: none; width: 100%; margin: 1.4rem 0;
+  }
+  .page-header { padding: 5rem 2.5rem 2.5rem; }
+  .page-header h1 { font-size: 1.9rem; }
+  .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: 0.72rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .nav-inner { padding: 0 1.25rem; }
+  .section, .section-divider, .intro-band, .page-header, .about-page {
+    padding-left: 1.25rem; padding-right: 1.25rem;
+  }
+  .nav-links { gap: 0.65rem; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.06em; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.intro-band, .pillar, .pub-item, .course-row {
+  animation: fadeIn 0.45s ease both;
+}
+.pillar:nth-child(2) { animation-delay: 0.06s; }
+.pillar:nth-child(3) { animation-delay: 0.12s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Blagoy Rangelov</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="eyebrow">Publications</div>
+  <h1>Selected and refereed papers</h1>
+  <p class="lede">
+    A complete and continuously updated list of my publications is maintained on
+    <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&author=Rangelov,%20Blagoy&db_key=AST" target="_blank" rel="noopener">ADS</a>.
+    Below is a curated list with direct links to refereed papers and conference reviews.
+  </p>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section">
+  <div class="pub-list" style="margin-top: 3.5rem;">
+    <div class="pub-item">
+      <div class="pub-year">2026</div>
+      <div class="pub-info">
+        <h4>Spatial Correlation of X-Ray Sources and Star Clusters in M31</h4>
+        <div class="authors">Guerrero, M. &amp; Rangelov, B.</div>
+        <div class="journal">Research Notes of the AAS, 10, 93</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2026RNAAS..10...93G" target="_blank" rel="noopener">ADS</a>
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2026</div>
+      <div class="pub-info">
+        <h4>Unsupervised Telemetry Anomaly Detection for CubeSats Across OPSS-SAT and SatNOGS Data</h4>
+        <div class="authors">Ahmed, A., Dutta, A. &amp; Rangelov, B.</div>
+        <div class="journal">IEEE SouthEast Con 2026</div>
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1109/SoutheastCon63549.2026.11476507" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div class="pub-info">
+        <h4>Neutron star heating vs. HST observations</h4>
+        <div class="authors">Rodríguez, L. E., Reisenegger, A., González-Caniulef, D., Petrovich, C., Pavlov, G., Guillot, S., Kargaltsev, O. &amp; Rangelov, B.</div>
+        <div class="journal">arXiv:2511.16507</div>
+      </div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2511.16507" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div class="pub-info">
+        <h4>Investigating the Nature of X-Ray Sources in the Andromeda Galaxy Using Chandra and Hubble Data</h4>
+        <div class="authors">Marentes, E. &amp; Rangelov, B.</div>
+        <div class="journal">Research Notes of the AAS, 9, 30</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2025RNAAS...9...30M" target="_blank" rel="noopener">ADS</a>
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div class="pub-info">
+        <h4>A VLITE Search for Millisecond Pulsars in Globular Clusters: Discovery of a Pulsar in GLIMPSE-C01</h4>
+        <div class="authors">McCarver, A. G., Maccarone, T., Ransom, S., Peters, W., Clarke, T., Giacintucci, S. &amp; Rangelov, B.</div>
+        <div class="journal">The Astrophysical Journal, 969, 30</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2024ApJ...969...30M" target="_blank" rel="noopener">ADS</a>
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div class="pub-info">
+        <h4>Chandra X-ray Observatory Observations of 13 Fermi LAT Sources</h4>
+        <div class="authors">Rangelov, B., Yang, H., Williams, B., Hare, J., Kargaltsev, O. &amp; Martinic, K.</div>
+        <div class="journal">The Astrophysical Journal, 961, 12</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2024ApJ...961...12R" target="_blank" rel="noopener">ADS</a>
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2023</div>
+      <div class="pub-info">
+        <h4>Population of X-ray Sources in the Intermediate-Age Cluster NGC 3532: A Testbed for Machine-Learning Classification</h4>
+        <div class="authors">Chen, S. G., Kargaltsev, O., Yang, H., Hare, J., Volkov, I., Rangelov, B. &amp; Tomsick, J.</div>
+        <div class="journal">The Astrophysical Journal</div>
+      </div>
+      <div class="pub-links">
+        <a href="#" target="_blank" rel="noopener">ADS</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2022</div>
+      <div class="pub-info">
+        <h4>Classifying Unidentified X-Ray Sources in the Chandra Source Catalog Using a Multiwavelength Machine-learning Approach</h4>
+        <div class="authors">Yang, H., Kargaltsev, O., Hare, J., Rangelov, B. &amp; Volkov, I.</div>
+        <div class="journal">The Astrophysical Journal, 941, 104</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2022ApJ...941..104Y" target="_blank" rel="noopener">ADS</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2019</div>
+      <div class="pub-info">
+        <h4>XMM-Newton and Chandra Observations of the Unidentified Fermi-LAT Source 3FGL J1016.5-6034</h4>
+        <div class="authors">Hare, J., Kargaltsev, O., Rangelov, B., Pavlov, G. &amp; Volkov, I.</div>
+        <div class="journal">The Astrophysical Journal, 875, 107</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2019ApJ...875..107H" target="_blank" rel="noopener">ADS</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2018</div>
+      <div class="pub-info">
+        <h4>Chandra X-ray Observatory and Hubble Space Telescope Observations of the Intermediate-age Cluster GLIMPSE-C01</h4>
+        <div class="authors">Hare, J., Kargaltsev, O. &amp; Rangelov, B.</div>
+        <div class="journal">The Astrophysical Journal, 865, 33</div>
+      </div>
+      <div class="pub-links">
+        <a href="http://adsabs.harvard.edu/abs/2018ApJ...865...33H" target="_blank" rel="noopener">ADS</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&author=Rangelov,%20Blagoy&db_key=AST" class="view-all-link" target="_blank" rel="noopener">
+    Full publication list on ADS →
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-contact">
+      <p>Texas State University, San Marcos, TX 78666</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://orcid.org/0000-0002-9282-5207" target="_blank" rel="noopener">ORCID</a>
+      <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&author=Rangelov,%20Blagoy&db_key=AST" target="_blank" rel="noopener">ADS</a>
+      <a href="https://github.com/blagoyrangelov" target="_blank" rel="noopener">GitHub</a>
+      <a href="#">CV (PDF)</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Blagoy Rangelov
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+});
+</script>
+
+</body>
+</html>
