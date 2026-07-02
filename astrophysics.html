@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outreach — Blagoy Rangelov</title>
+<title>Astrophysics — Blagoy Rangelov</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -616,10 +616,10 @@ footer {
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="discovery.html">AI Discovery</a>
-      <a href="astrophysics.html">Astrophysics</a>
+      <a href="astrophysics.html" class="active">Astrophysics</a>
       <a href="publications.html">Publications</a>
       <a href="teaching.html">Teaching</a>
-      <a href="outreach.html" class="active">Outreach</a>
+      <a href="outreach.html">Outreach</a>
       <a href="about.html">About</a>
       <a href="news.html">News</a>
     </div>
@@ -628,96 +628,153 @@ footer {
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="eyebrow">Outreach</div>
-  <h1>Public astronomy at Texas State</h1>
+  <div class="eyebrow">Research</div>
+  <h1>Endpoints of stellar evolution</h1>
   <p class="lede">
-    Educating the public about physics and astronomy has been a strong interest during my career.
-    I have participated in various public events (observing sessions, planetarium shows, 
-    astrophotography exhibitions, etc.) and enjoyed giving presentations for variety of audiences (general 
-    public, undergraduate and graduate students, professional scientists). 
+    My research interests are diverse and yet focused on understanding the populations of
+    endpoints of stellar evolution using multi-wavelength data and state-of-the-art
+    computational methods such as machine learning. Neutron stars and black holes give us
+    unique insight into the physical processes and conditions — found nowhere else — that
+    take place in the vicinity of these extreme astrophysics laboratories. To study these
+    objects, I am interested in investigating their progenitors and birth sites, which
+    requires understanding the evolution of massive stars and binaries, as well as the
+    formation and evolution of tight binaries in star clusters.
+    <br><br>
+    A complete list of my publications is available on
+    <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&author=Rangelov,%20Blagoy&db_key=AST" target="_blank" rel="noopener">ADS</a>.
   </p>
 </div>
 
-<!-- OUTREACH ACTIVITIES -->
+<!-- RESEARCH SECTIONS -->
 <div class="section">
-  <div class="outreach-block" style="padding-top: 3.5rem;">
-    <div class="outreach-text">
-      <h3>Texas State University Observatory</h3>
-      <p>
-        I run the Texas State University Observatory, located on the roof of the Supple
-        Science building. Every Wednesday after sunset (weather permitting) we open the
-        rooftop for public observing — averaging about 25 visitors per evening, and running
-        on this weekly schedule continuously since September 2016. The 16-inch telescope
-        brings galaxies, nebulae, and a long list of deep-sky targets within reach.
-      </p>
-      <p>
-        Beyond the weekly nights, the Observatory anchors major campus events — Family
-        Weekend (200+ attendees each year, 2016&ndash;2024), Bobcat Day, Bobcats Back, and
-        Week of Welcome — and hosts themed evenings around the Orionids, Leonids, and other
-        meteor showers. We have also opened the doors to visiting youth groups including
-        BSA Troop 112 and Girl Scout Troop 43105.
-      </p>
-      <p>
-        For current astronomy events at Texas State, follow our Facebook page at
-        <a href="https://www.facebook.com/astrotxst/" target="_blank" rel="noopener">@astrotxst</a>.
-      </p>
+  <div class="thread-list" style="margin-top: 1.5rem;">
+    <div class="thread" style="grid-template-columns: 1fr;">
+      <div>
+        <h3>Machine-learning classification of X-ray sources</h3>
+        <p style="max-width: none;">
+          The rapid increase in serendipitous X-ray source detections requires novel
+          approaches to efficiently classify them. Only a small fraction of detected
+          sources have reliable identifications — for example, roughly one quarter of the
+          ~700 X-ray sources in M33. I am developing an automated classification pipeline
+          (XClass) using supervised machine-learning methods and multi-wavelength
+          photometric data from Chandra, HST, and archival catalogs. The pipeline is
+          designed to be applicable across galaxies with different environments, enabling
+          population studies on a much larger scale than previously possible.
+        </p>
+        <p style="font-size: 0.78rem; color: var(--ink-45); line-height: 1.65; margin-top: 1.25rem; max-width: none;">
+          <em>Key references:</em>
+          <a href="http://adsabs.harvard.edu/abs/2022ApJ...941..104Y" target="_blank" rel="noopener">Yang et al. 2022</a>
+          (ApJ, 941, 104) — CSC 2.0 ML classification;
+          <a href="http://adsabs.harvard.edu/abs/2023ApJ...948...59C" target="_blank" rel="noopener">Chen et al. 2023</a>
+          (ApJ, 948, 59) — NGC 3532 testbed;
+          <a href="http://adsabs.harvard.edu/abs/2025RNAAS...9...30M" target="_blank" rel="noopener">Marentes &amp; Rangelov 2025</a>
+          (RNAAS, 9, 30) — M31 X-ray sources;
+          <a href="http://adsabs.harvard.edu/abs/2024ApJ...961...12R" target="_blank" rel="noopener">Rangelov et al. 2024</a>
+          (ApJ, 961, 12) — Chandra observations of 13 Fermi sources.
+        </p>
+      </div>
     </div>
-    <figure class="outreach-figure">
-      <img src="observatory.jpg" alt="Texas State University Observatory">
-      <figcaption>The TXST Observatory on the rooftop of Supple Science (Credit: astrotxst.org).</figcaption>
-    </figure>
+
+    <div class="thread" style="grid-template-columns: 1fr;">
+      <div>
+        <h3>Multi-wavelength observations of X-ray source populations</h3>
+        <p style="max-width: none;">
+          I use multi-wavelength data from Chandra, HST, XMM-Newton, and other
+          observatories to characterize X-ray source populations and their environments.
+          A major focus has been the spatial relationship between X-ray binaries and star
+          clusters in nearby galaxies. In the Antennae merger, a high fraction (~20–25%)
+          of XRBs reside within their parent clusters, and chance superposition accounts
+          for only 1–2% of the observed coincidences. More recently, we have extended this
+          work to M31 using the Panchromatic Hubble Andromeda Treasury, finding that XRBs
+          are significantly more concentrated within 100 pc of clusters than a randomly
+          distributed population.
+        </p>
+        <p style="max-width: none;">
+          I also discovered the first pulsar bow shocks in the far-ultraviolet around
+          millisecond pulsars PSR J0437–4715 and PSR J2124–3358 using HST.
+        </p>
+        <p style="font-size: 0.78rem; color: var(--ink-45); line-height: 1.65; margin-top: 1.25rem; max-width: none;">
+          <em>Key references:</em>
+          <a href="http://adsabs.harvard.edu/abs/2011ApJ...741...86R" target="_blank" rel="noopener">Rangelov et al. 2011</a>
+          (ApJ, 741, 86) — NGC 4449;
+          <a href="http://adsabs.harvard.edu/abs/2012ApJ...758...99R" target="_blank" rel="noopener">Rangelov et al. 2012</a>
+          (ApJ, 758, 99) — Antennae;
+          <a href="http://adsabs.harvard.edu/abs/2016ApJ...831..129R" target="_blank" rel="noopener">Rangelov et al. 2016</a>
+          (ApJ, 831, 129) and
+          <a href="http://adsabs.harvard.edu/abs/2017ApJ...835..264R" target="_blank" rel="noopener">2017</a>
+          (ApJ, 835, 264) — FUV bow shocks;
+          <a href="http://adsabs.harvard.edu/abs/2026RNAAS..10...93G" target="_blank" rel="noopener">Guerrero &amp; Rangelov 2026</a>
+          (RNAAS, 10, 93) — M31 spatial correlations.
+        </p>
+      </div>
+    </div>
+
+    <div class="thread" style="grid-template-columns: 1fr;">
+      <div>
+        <h3>Binary stellar evolution and population synthesis</h3>
+        <p style="max-width: none;">
+          To connect the observed X-ray source populations with theoretical predictions,
+          I am developing a large-scale binary stellar evolution population synthesis
+          pipeline. Using the <code>binary_c</code> rapid evolution code, I simulate the
+          formation and evolution of X-ray binaries, double compact objects, and
+          gravitational-wave merger progenitors across a range of initial conditions. The
+          goal is to compare synthetic populations directly with the observed ones —
+          testing whether current binary evolution models can reproduce the spatial
+          distributions, luminosity functions, and demographics seen in real galaxies.
+        </p>
+        <p style="font-size: 0.78rem; color: var(--ink-45); line-height: 1.65; margin-top: 1.25rem; max-width: none;">
+          <em>This work is ongoing.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- OTHER DIRECTIONS -->
+<div class="section">
+  <div class="section-head">
+    <h2>Other directions</h2>
+    <div class="line"></div>
   </div>
 
-  <div class="outreach-block reverse">
-    <div class="outreach-text">
-      <h3>Texas State Astronomy Club</h3>
+  <div class="pillars" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="pillar">
+      <div class="pillar-number">Pillar I</div>
+      <h3>AI-Driven Discovery</h3>
       <p>
-        In 2016 I founded the
-        <a href="https://www.astrotxst.org/" target="_blank" rel="noopener">Texas State Astronomy Club</a>
-        and have served as its faculty advisor ever since. The Club regularly visits local
-        schools — most often Hernandez Elementary, the Katherine Anne Porter Charter School
-        in Wimberley, and IDEA — running astronomy demonstrations for 4th- through
-        8th-graders.
+        Autonomous, literature-grounded prediction — multi-agent LLM pipelines that
+        generate and backtest hypotheses in X-ray binary astrophysics.
       </p>
-      <p>
-        Together with Club members I built a small portable planetarium out of PVC pipe.
-        Its design was popular enough at the 2018 WISE conference to win the WISE
-        People&rsquo;s Choice Award, which the Club went on to receive for four consecutive
-        years (2017&ndash;2020).
-      </p>
+      <div class="pillar-topics">
+        <span class="topic-tag">Sibyl</span>
+        <span class="topic-tag">LLM agents</span>
+        <span class="topic-tag">Temporal backtesting</span>
+      </div>
+      <a href="discovery.html" class="pillar-link">
+        Learn more
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
     </div>
-    <figure class="outreach-figure">
-      <img src="planetarium.jpg" alt='PVC portable Planetarium'>
-      <figcaption>PVC portable Planetarium.</figcaption>
-    </figure>
-  </div>
 
-  <div class="outreach-block">
-    <div class="outreach-text">
-      <h3>2017 Total Solar Eclipse — Marshall, MO</h3>
+    <div class="pillar">
+      <div class="pillar-number">Pillar II</div>
+      <h3>Space Exploration</h3>
       <p>
-        In the summer of 2017 I took 12 students to Marshall, Missouri to observe the
-        21 August total solar eclipse. We brought three telescope + DSLR setups to
-        capture the event. The roughly fourteen-hour drive each way was worth it —
-        we were able to see and photograph the spectacular totality.
+        Leading the Space Lab at Texas State — an experimental program where students
+        design CubeSat payloads, build balloon-borne instruments, and work with vacuum
+        systems for space-qualified hardware.
       </p>
-    </div>
-    <figure class="outreach-figure">
-      <img src="solar_eclipse2017.gif" alt='Total Solar Eclipse 2017'>
-      <figcaption>GIF: 2017 eclipse from Marshall, MO.</figcaption>
-    </figure>
-  </div>
-
-  <div class="outreach-block" style="grid-template-columns: 1fr; border-bottom: none;">
-    <div class="outreach-text">
-      <h3>Society for Space Exploration</h3>
-      <p>
-        Since August 2020 I have been faculty advisor to the Society for Space Exploration,
-        the student organization that anchors the
-        <a href="https://txstspacelab.org/" target="_blank" rel="noopener">Texas State Space Lab</a>
-        — where undergraduates design CubeSat payloads, build balloon-borne instruments, and
-        learn how space-qualified hardware actually gets built.
-      </p>
+      <div class="pillar-topics">
+        <span class="topic-tag">CubeSats</span>
+        <span class="topic-tag">Balloon missions</span>
+        <span class="topic-tag">Student lab</span>
+      </div>
+      <a href="https://txstspacelab.org/" class="pillar-link" target="_blank" rel="noopener">
+        Visit Space Lab site
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+      </a>
     </div>
   </div>
 </div>
